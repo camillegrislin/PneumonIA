@@ -4,37 +4,31 @@ from PIL import Image
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
+import cv2
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
 def predict(testing_image):
     
     model = load_model('model_ML.h5')
-    
+ 
     image = Image.open(testing_image).convert('RGB')
     image = image.resize((224,224))
     image = img_to_array(image)
-    image = image.reshape(None,224,224,3)
+    image = image.reshape(1,224,224,3)
+    image = image/255.0
 
     result = model.predict(image)
-    print(result)
 
+    result = np.argmax(result, axis=1)
+    
 
-  
-    if result[0][0] == 1:
-        return 'Pneumonia'
-    elif result[0][1] == 0:
-        return 'Normal'
-    #result = np.argmax(result, axis=-1)
-
-    # if result == 0:
-    #     return "Patient is Normal."
-    # else :
-    #     return "Patient has pneumonia."
-    # # else result == 1:
-    # #     return "Patient has Viral Pneumonia."
-    # #else:
-    #     #return "Patient is COVID Positive."
+    if result == 0:
+        return "Patient is Normal."
+    else :
+       return "Patient has pneumonia."
+   
+    
 
 def main():
     st.title('Covid-Pneumonia Detection')
