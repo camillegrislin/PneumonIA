@@ -8,6 +8,10 @@ import cv2
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
+with st.sidebar:
+        st.write("Hello our names are Zoé DUPRAT, Martin CORNEN, Camille GRISLIN.") 
+        st.write("We decided to create an app where you can drag your chest x-ray and an IA will determine your pourcentage of chance to have a pneumonia.")
+
 def predict(testing_image):
     
     model = load_model('model_ML.h5')
