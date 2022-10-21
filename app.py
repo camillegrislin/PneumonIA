@@ -8,10 +8,6 @@ import cv2
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-with st.sidebar:
-        st.write("Hello our names are Zoé DUPRAT, Martin CORNEN, Camille GRISLIN.") 
-        st.write("We decided to create an app where you can drag your chest x-ray and an IA will determine your pourcentage of chance to have a pneumonia.")
-
 def predict(testing_image):
     
     model = load_model('model_ML.h5')
@@ -32,13 +28,21 @@ def predict(testing_image):
     else :
        return "Patient has pneumonia."
    
-    
+## Sidebar
+
+st.sidebar.image("pnemonIApp_logo.png")
+st.sidebar.markdown(
+         " ## PneumonIApp")
+st.sidebar.markdown(
+         "created by Martin CORNEN, Zoé DUPRAT, Camille Grislin")
+st.sidebar.markdown(
+         "click *on [Github](https://github.com/camillegrislin/PneumonIA)* to see the code")
 
 def main():
-    st.title('Covid-Pneumonia Detection')
-    st.subheader('This project will predict whether a person is suffering from Covid or Viral Pneumonia using Radiograph images.')
+    st.title('Pneumonia Detection')
+    st.subheader('This project will predict whether a person is suffering from Pneumonia using Radiograph images.')
 
-    image = st.file_uploader('Upload Image', type=['jpg', 'jpeg', 'png'])
+    image = st.file_uploader('Upload your radiograph images', type=['jpg', 'jpeg', 'png'])
 
     if image is not None :
 
