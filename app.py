@@ -11,7 +11,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 def predict(testing_image):
     
-    model = load_model('model_ML.h5')
+    model = load_model('model_ML_F.h5')
  
     image = Image.open(testing_image).convert('RGB')
     image = image.resize((224,224))
