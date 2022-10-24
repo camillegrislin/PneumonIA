@@ -5,7 +5,7 @@ We decided to create an app where you can drag your chest x-ray and an IA will d
 
 To use our app, you just need to drag your x-ray file on the app and clic on Result. 
 
-We deployed our app on azure. there is our URL link for the app https://pneumoni-web-app.azurewebsites.net/
+We deployed our app on azure and there is our URL link for the app https://pneumoni-web-app.azurewebsites.net/
 
 Simple, right ?
 
