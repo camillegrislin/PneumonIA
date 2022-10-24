@@ -46,7 +46,7 @@ if image is not None :
 
 ## Sidebar
 
-st.sidebar.image("pnemonIApp_logo.png")
+st.sidebar.image("logo_pneumoIApp.png")
 st.sidebar.markdown("# PneumonIApp")
 st.sidebar.markdown("created by Martin CORNEN, Zoé DUPRAT, Camille Grislin")
 st.sidebar.markdown("click *on [Github](https://github.com/camillegrislin/PneumonIA)* to see the code")
