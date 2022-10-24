@@ -1,8 +1,6 @@
-opencv-python-headless
+opencv-python
 streamlit
 tensorflow
 numpy
-matplotlib
-torch
-torchvision
-pandas
+
+
